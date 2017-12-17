@@ -29,19 +29,18 @@ class Sem3SearchService
     arr = Array.new
     r = @sem3.get_products()
 
-    for i in 0..params[:pag].to_i
-      temp = @sem3.iterate_products
-      arr.push(temp['results'])
-    end
-
-    if r['code'].eql?('OK')
+    if r['total_results_count'] != 0
+      for i in 0..params[:pag].to_i
+        temp = @sem3.iterate_products
+        if temp != nil
+          arr.push(temp['results'])
+        end
+      end
       arr
     else
       if r['message']
-        m = JSON.parse(r['message'])
-        Rails.logger.debug("+++ Sem3 API Error: #{m['message']} Code: #{m['code']} +++")
+        Rails.logger.debug("+++ Sem3 API Error: #{r['message']} Code: #{r['code']} +++")
       end
-
       []
     end
   end

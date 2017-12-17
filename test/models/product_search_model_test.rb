@@ -13,7 +13,13 @@
 require 'test_helper'
 
 class ProductSearchModelTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "good query" do
+    query = ProductSearchModel.new(query: 'Telescope', result: {}, pag_count: 3)
+    assert query.valid?
+  end
+
+  test "bad query" do
+    query = ProductSearchModel.new(query: 'Telescope', pag_count: "3")
+    assert query.valid?
+  end
 end
