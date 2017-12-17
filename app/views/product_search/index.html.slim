@@ -2,11 +2,11 @@
   = form_tag(product_search_index_path, method: :get, class: 'form-horizontal') do
     .form-group
       .col-md-4
-        = number_field_tag :pag, params[:pag], min: 1, class: 'form-control'
-      .col-md-4
-        = text_field_tag :search, params[:search], :required => true, class: 'form-control'
-      .col-md-4
-        = submit_tag 'Search', class: 'btn btn-primary'
+          = label_tag 'Number of Pages'
+          = number_field_tag :pag, params[:pag], min: 0, placeholder: 'Pages', class: 'form-control'
+          = label_tag 'Search Query'
+          = text_field_tag :search, params[:search], :required => true, placeholder: 'Item', class: 'form-control'
+          = submit_tag 'Search', class: 'btn btn-primary'
 
 .container
   - if @items.blank?
@@ -33,5 +33,6 @@
                 = link_to_retailer(obj)
               td.price
                 = "$ #{obj['price']}"
-div id="footer"
-  | Copyright &copy; 2017 Alan Xu
+
+  div
+    | Copyright &copy; 2017 Alan Xu
