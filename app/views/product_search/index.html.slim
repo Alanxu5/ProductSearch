@@ -1,6 +1,8 @@
 .container(style="margin-top: 1rem")
   = form_tag(product_search_index_path, method: :get, class: 'form-horizontal') do
     .form-group
+      .col-md-12
+        = number_field_tag :pag, params[:pag], min: 1, class: 'form-control'
       .col-md-11
         = text_field_tag :search, params[:search], class: 'form-control'
       .col-md-1
@@ -14,7 +16,7 @@
     table.table.table-striped
       thead
         tr
-          th 
+          th
             | Name
           th
             | Retailer / Link
@@ -23,10 +25,11 @@
 
       tbody
         - @items.each do |item|
-          tr
-            td
-              = item['name']
-            td
-              = link_to_retailer(item)
-            td
-              = "$ #{item['price']}"        
+          - item.each do |obj|
+            tr
+              td
+                = obj['name']
+              td
+                = link_to_retailer(obj)
+              td
+                = "$ #{obj['price']}"

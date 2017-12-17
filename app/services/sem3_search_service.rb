@@ -26,11 +26,16 @@ class Sem3SearchService
 
   def get_products
     Rails.logger.info('+++ Sem3 API: Getting products... +++')
-
+    arr = Array.new
     r = @sem3.get_products()
 
+    for i in 0..params[:pag].to_i
+      temp = @sem3.iterate_products
+      arr.push(temp['results'])
+    end
+
     if r['code'].eql?('OK')
-      r['results']
+      arr
     else
       if r['message']
         m = JSON.parse(r['message'])
