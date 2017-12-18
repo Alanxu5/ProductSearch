@@ -1,3 +1,4 @@
+require 'semantics3'
 class Sem3SearchService
   attr_reader :params
 
@@ -16,6 +17,8 @@ class Sem3SearchService
   private
 
   def setup
+    API_KEY = 'SEM356333BED7E0FE34EBC53C6129B248869'
+    API_SECRET = 'OTM1YzZhOTQ1MDU2MDZiNmNkNmI1Yjg5NGJlNDAzZGE'
     @sem3 = Semantics3::Products.new(Rails.application.secrets.sem3_api_key,
                                      Rails.application.secrets.sem3_api_secret)
   end
