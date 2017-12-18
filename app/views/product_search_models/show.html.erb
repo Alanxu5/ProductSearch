@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Query:</strong>
+  <%= @product_search_model.query %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @product_search_model.result %>
+</p>
+
+<p>
+  <strong>Pag count:</strong>
+  <%= @product_search_model.pag_count %>
+</p>
+
+<%= link_to 'Edit', edit_product_search_model_path(@product_search_model) %> |
+<%= link_to 'Back', product_search_models_path %>

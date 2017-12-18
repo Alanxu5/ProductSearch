@@ -1,0 +1,32 @@
+<%= form_with(model: product_search_model, local: true) do |form| %>
+  <% if product_search_model.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product_search_model.errors.count, "error") %> prohibited this product_search_model from being saved:</h2>
+
+      <ul>
+      <% product_search_model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :query %>
+    <%= form.text_field :query, id: :product_search_model_query %>
+  </div>
+
+  <!-- <div class="field">
+    <%= form.label :result %>
+    <%= form.text_field :result, id: :product_search_model_result %>
+  </div> -->
+
+  <div class="field">
+    <%= form.label :pag_count %>
+    <%= form.number_field :pag_count, id: :product_search_model_pag_count %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
