@@ -1,27 +1,69 @@
+# Product Search
+
 ProductSearch is a simple Rails application that enables a user to search Semantics3's product database.
 
----
+# Live Demo
 
-Live demo: https://sem3-product-search.herokuapp.com/
+https://product-earch.herokuapp.com/
 
-Clone the repository at: https://github.com/fingerprint/ProductSearch
+## Getting Started
 
-### Prerequisites
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-- You will need to create an account at Semantics3: https://semantics3.com/start
+### Installing
 
-- Once your account has been activated (email verification is required), add the API_KEY and API_SECRET to the .env file (see .env.sample in the root of project).
+A step by step series of examples that tell you have to get a development env running
 
-### Objective
+Clone the repository
 
-- Implement caching, where Semantics3 query responses are stored in a *SQL* database to speed-up subsequent searches (note: cache invalidation is not a requirement).
+```
+git clone git@github.com:Alanxu5/ProductSearch.git
+```
 
-- Write unit tests.
+Go into directory
 
-### Optionals
+```
+cd ProductSearch
+```
 
-- Refactor the search view using a front-end JavaScript framework (React, Vue.js, or Angular).
+Install bundler
 
-- Implement a simple interface that allows an “admin” to review, add, or remove items from the cache.
+```
+gem install bundler
+```
 
-- Implement pagination.
+Fetch gems
+
+```
+bundle install
+```
+
+Run setup
+
+```
+./bin/setup
+```
+
+Run rails server
+
+```
+rails server
+```
+
+Go to localhost:3000
+
+## Built With
+
+* [Bootstrap](https://getbootstrap.com/)
+* [Ruby on Rails](http://rubyonrails.org/)
+* [Schema To Scaffold](https://github.com/frenesim/schema_to_scaffold)
+* [Semantic3](https://www.semantics3.com/)
+
+## Authors
+
+* **Alan Xu**
+* **Johanns Gregorian**
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
