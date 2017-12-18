@@ -35,6 +35,9 @@ gem 'semantics3'
 # Documentation
 gem 'annotate', group: :development
 
+# Ruby version
+ruby "2.4.2"
+
 group :development, :test do
   gem 'dotenv-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
