@@ -11,7 +11,7 @@ gem 'rails', '~> 5.1.4'
 gem 'pg'
 
 # Server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 
 # HTML/CSS
 gem 'sass-rails', github: "rails/sass-rails"
